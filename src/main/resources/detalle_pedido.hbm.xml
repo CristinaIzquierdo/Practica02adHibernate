@@ -1,0 +1,26 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="model.DetallePedido" table="detalle_pedido">
+		<composite-id>
+		    <key-many-to-one name="producto" class="model.Producto">
+		    	<column name="codigo_producto" />
+		    </key-many-to-one>
+		    <key-many-to-one name="pedido" class="model.Pedido">
+		    	<column name="codigo_pedido" /> 
+		    </key-many-to-one>
+		</composite-id>
+        
+		<property name="cantidad" type="int">
+		    <column name="cantidad"/>
+		</property>
+		<property name="precioUnidad">
+		    <column name="precio_unidad"/>
+		</property>
+		<property name="numeroLinea" type="int">
+		    <column name="numero_linea"/>
+		</property>
+    </class>
+</hibernate-mapping>

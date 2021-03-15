@@ -1,0 +1,57 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="model.Cliente" table="cliente">
+        <id name="codigoCliente" type="int" column="codigo_cliente">
+            <generator class="assigned"/>
+        </id>
+		<property name="nombreCliente">
+		    <column name="nombre_cliente"/>
+		</property>
+		<property name="nombreContacto">
+		    <column name="nombre_contacto"/>
+		</property>
+		<property name="apellidoContacto">
+		    <column name="apellido_contacto"/>
+		</property>
+		<property name="telefono">
+		    <column name="telefono"/>
+		</property>
+		<property name="fax">
+		    <column name="fax"/>
+		</property>
+		<property name="lineaDireccion1">
+		    <column name="linea_direccion1"/>
+		</property>
+		<property name="lineaDireccion2">
+		    <column name="linea_direccion2"/>
+		</property>
+		<property name="ciudad">
+		    <column name="ciudad"/>
+		</property>
+		<property name="region">
+		    <column name="region"/>
+		</property>
+		<property name="pais">
+		    <column name="pais"/>
+		</property>
+		<property name="codigoPostal">
+		    <column name="codigo_postal"/>
+		</property>
+		<property name="codigoEmpleadoRepVentas">
+		    <column name="codigo_empleado_rep_ventas"/>
+		</property>
+		<property name="limiteCredito">
+		    <column name="limite_credito"/>
+		</property>
+		
+		<set name="pedidos" table="pedido" inverse="false" lazy="true">
+            <key>
+                <column name="codigo_cliente" />
+            </key>
+            <one-to-many class="model.Pedido"/>
+        </set>
+    </class>
+</hibernate-mapping>
