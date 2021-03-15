@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 public class DetallePedido implements Serializable {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
 	private Pedido pedido;
 	private Producto producto;
 	
@@ -57,12 +61,12 @@ public class DetallePedido implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DetallePedido [pedido=" + pedido + ", producto=" + producto + ", cantidad=" + cantidad
-				+ ", precioUnidad=" + precioUnidad + ", numeroLinea=" + numeroLinea + "]";
+		return "PEDIDO: " + pedido + " PRODUCTO: " + producto + " CANTIDAD: " + cantidad
+				+ " PRECIO UNIDAD: " + precioUnidad + " NUMERO LINEA: " + numeroLinea;
 	}
 	
 	public String imprimirAbreviado() {
-		return "DetallePedido [codigo_pedido=" + pedido.getCodigoPedido() + ", fecha_pedido=" + pedido.getFechaPedido().toString() + ", codigo_producto=" + producto.getCodigoProducto() + ", cantidad=" + cantidad
-				+ ", nombreProducto=" + producto.getNombre() + ", gamaProduto=" + producto.getGama() + ", descripciónProducto=" + producto.getDescripcion() + ", precioUnidad=" + precioUnidad + ", numeroLinea=" + numeroLinea + "]";
+		return "PEDIDO: " + pedido.getCodigoPedido() + " FECHA PEDIDO: " + pedido.getFechaPedido().toString() + " CODIGO: " + producto.getCodigoProducto() + " CANTIDAD: " + cantidad
+				+ " NOMBRE: " + producto.getNombre() + " GAMA: " + producto.getGama() + " DESCRIPCION: " + producto.getDescripcion() + " PRECIO UNIDAD: " + precioUnidad + " NUMERO LINEA: " + numeroLinea;
 	}
 }

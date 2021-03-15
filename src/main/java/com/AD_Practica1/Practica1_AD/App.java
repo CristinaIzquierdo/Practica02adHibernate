@@ -6,21 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import org.apache.commons.lang3.math.NumberUtils;
-
 import dao.ClienteDaoImplementacion;
 import dao.ProductoDaoImplementacion;
 import exceptions.ClientNotFound;
 import exceptions.DuplicateException;
 import model.Cliente;
 import model.DetallePedido;
-import model.Pedido;
 import model.Producto;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
 	private static Scanner sc = new Scanner(System.in);
@@ -30,14 +24,15 @@ public class App
 	public static void main( String[] args )
     {
     	int opcion = 0;
+		
     	do {
     		try {
     			opcion = getOpcionDeMenu();
     			ejecutarOpcion(opcion);
 			} catch (Exception e) {
 				opcion = 0;
-				System.out.println("====> Error: " + e.getMessage());
-				System.out.println("La opción introducida no es un número, cerrando programa");
+				System.out.println("********* Error: " + e.getMessage());
+				System.out.println("Introduce un número por favor. Saliendo...");
 			}
     	} while (opcion != 0);
         
@@ -58,7 +53,7 @@ public class App
 			c = pedirDatosCliente();
 			 try {
 				if (cDao.anadeCliente(c)) {
-					 System.out.println("Se ha insertado el cliente '" + c.getNombreCliente() + "' en la base de datos");
+					 System.out.println("*************** El cliente: '" + c.getNombreCliente() + "' se ha insertado en la base de datos. ***************");
 				 }
 			} catch (DuplicateException e) {
 				System.out.println(e.getMessage());
@@ -121,12 +116,7 @@ public class App
 				suma += detalle.getPrecioUnidad() * detalle.getPrecioUnidad();
 			}
 
-			System.out.println("La suma total de gasto es: " + suma);
-
-//			List<Pedido> pedidos = cDao.obtenerPedidos(Integer.parseInt(input));
-//			for (Pedido pedido: pedidos) {
-//				System.out.println(pedido);
-//			}
+			System.out.println("Suma total de gasto es: " + suma);
 
 			break;
 		case 7:
@@ -142,7 +132,7 @@ public class App
 					System.out.println("No hay pedidos este mes");
 				}
 			} catch (NumberFormatException | SQLException e) {
-				System.out.println("====> Error: " + e.getMessage());
+				System.out.println("********* Error: " + e.getMessage());
 			}
 
 			break;
@@ -167,7 +157,6 @@ public class App
 	
 	private static Producto pedirDatosProducto(Producto p) throws NumberFormatException{
  		
-//		System.out.print("Codigo de producto: "); String codigoProducto = sc.nextLine();
 		System.out.print("Nombre del producto: "); String nombreProducto = sc.nextLine();
 		System.out.print("Gama: "); String gama = sc.nextLine();
 		System.out.print("Dimensiones: "); String dimensiones = sc.nextLine();
@@ -193,7 +182,7 @@ public class App
 	private static int getOpcionDeMenu() {
 		System.out.println("");
 		System.out.println("******************************");
-		System.out.println("******* Menú principal *******");
+		System.out.println("------------ Menú principal ------------");
 		System.out.println("******************************");
 		System.out.println( "1.- Añade un cliente" );
 		System.out.println( "2.- Muestra un cliente por id" );
@@ -202,7 +191,7 @@ public class App
 		System.out.println( "5.- Edita producto" );
 		System.out.println( "6.- Mostrar pedidos de un cliente por ID" );
 		System.out.println( "7.- Mostrar empleado del mes" );
-		System.out.print( "Selecciona una opcion (0 para terminar): " );
+		System.out.print( "Selecciona una opcion (0 para salir): " );
 		
 		String s = sc.nextLine();
 

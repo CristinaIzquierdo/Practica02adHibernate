@@ -5,24 +5,17 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
-import javax.persistence.criteria.CriteriaBuilder;
-
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.CriteriaQuery;
-import org.hibernate.hql.internal.ast.util.SessionFactoryHelper;
 
 import com.connection.Conexion;
 import com.connection.HibernateUtil;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+
 import exceptions.ClientNotFound;
 import exceptions.DuplicateException;
-import interfazDao.*;
+import interfazDao.InterfazClienteDao;
 import model.Cliente;
 import model.DetallePedido;
 import model.Pedido;

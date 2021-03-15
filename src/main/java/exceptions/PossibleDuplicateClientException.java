@@ -15,10 +15,6 @@ public class PossibleDuplicateClientException extends ClientException{
 	}
 
 	public String getMessage() {
-		return "El cliente con " + 
-				"nombre: " + this.cliente.getNombreCliente() + 
-				", apellido: " + this.cliente.getApellidoContacto() + 
-				" o telefono: " + this.cliente.getTelefono() + 
-				" podría estar duplicado";
+		return "El cliente podrÃ­a estar duplicado";
 	}
 }

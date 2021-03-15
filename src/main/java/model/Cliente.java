@@ -5,6 +5,7 @@ import java.util.Set;
 public class Cliente {
 
 	private Integer codigoCliente;
+	private Set<Pedido> pedidos;
 	private String nombreCliente;
 	private String nombreContacto;
 	private String apellidoContacto;
@@ -18,12 +19,6 @@ public class Cliente {
 	private String codigoPostal;
 	private Integer codigoEmpleadoRepVentas;
 	private Float limiteCredito;
-	private enum tipoDoc{DNI, NIE};
-	private String email;
-	private String numeroDniNie;
-	private String password;
-	
-	private Set<Pedido> pedidos;
 	
 
 	public Cliente() {
@@ -177,11 +172,6 @@ public class Cliente {
 		this.limiteCredito = limiteCredito;
 	}
 
-	@Override
-	public String toString() {
-		return  this.codigoCliente + ", " + this.nombreCliente + ", " + this.nombreContacto + ", " + this.apellidoContacto + ", " + this.telefono + ", " + this.fax + ", " + this.lineaDireccion1 + ", " + this.lineaDireccion2 + ", " + this.ciudad + ", " + this.region + ", " + this.pais + ", " + this.codigoPostal + ", " + this.codigoEmpleadoRepVentas + ", " + this.limiteCredito;
-	}
-
 	public Set<Pedido> getPedidos() {
 		return pedidos;
 	}
@@ -189,4 +179,13 @@ public class Cliente {
 	public void setPedidos(Set<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return   "CODIGO CLIENTE: " +this.codigoCliente + " NOMBRE: " + this.nombreCliente + " NOMBRE CONTACTO: " + this.nombreContacto + " APELLIDO: " + this.apellidoContacto + " TELEFONO: " + this.telefono + " FAX: " + this.fax + " LINEA DIRECCION: " + this.lineaDireccion1 + " DIRECCION: " + this.lineaDireccion2 + " CIUDAD: " + this.ciudad + " REGION: " + this.region + " PAIS: " + this.pais + " CODIGO POSTAL: " + this.codigoPostal + " REP VENTAS: " + this.codigoEmpleadoRepVentas + " LIMITE CREDITO: " + this.limiteCredito;
+	}
+
+	
 }

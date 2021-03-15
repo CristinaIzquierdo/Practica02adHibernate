@@ -124,9 +124,9 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto:  ID: " + this.codigoProducto + " Nombre del producto: " + this.nombre + " Gama: " + this.gama+ " Dimensiones del producto: " 
-				+ this.dimensiones+ " Proveedor del producto: " + this.proveedor + " Descripcion del producto: " + this.descripcion+ " Cantidad Stock del producto: " + this.cantidadStock
-				+ "Precio proveedor:"  + this.precioProveedor + " Precio Venta: " + this.precioVenta;
+		return "PRODUCTO: " + this.codigoProducto + " NOMBRE: " + this.nombre + " GAMA: " + this.gama+ " DIMENSIONES: " 
+				+ this.dimensiones+ " PROVEEDOR: " + this.proveedor + " DESCRIPCION: " + this.descripcion+ " CANTIDAD STOCK: " + this.cantidadStock
+				+ "PRECIO PROVEEDOR:"  + this.precioProveedor + " PRECIO VENTA: " + this.precioVenta;
 	}
 				
 			

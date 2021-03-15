@@ -6,7 +6,7 @@ public class ClientNotFound extends Exception{
 	
 	
 	public String getMessage() {
-		return "El cliente no existe";
+		return "El cliente no se ha encontrado en la base de datos";
 	}
 }
 
