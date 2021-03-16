@@ -28,14 +28,13 @@ public class ClienteDaoImplementacion implements InterfazClienteDao {
         try{
             conecction = Conexion.conectar();
         } catch (SQLException e){
-            System.out.println("No hemos podido conectar a la base de datos");
+            System.out.println("********* No se ha podido conectar con la base de datos *********");
         }
     }
 	
 	@Override
 	public boolean anadeCliente(Cliente c) throws DuplicateException {
 		Statement statement;
-		
 
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			session.beginTransaction();
@@ -90,29 +89,14 @@ public class ClienteDaoImplementacion implements InterfazClienteDao {
 
 	@Override
 	public void actualizar(Cliente cliente, String[] params) {
-//		cliente.setNombreCliente(Objects.requireNonNull(params[0], "Nombre cannot be null"));
-//		cliente.setApellidoContacto(Objects.requireNonNull(params[1], "Apellido cannot be null"));
-//		    
-//		clientes.add(cliente);
 	}
 
 	@Override
 	public void eliminar(Cliente cliente) {
-//		clientes.remove(cliente);
 	}
 
 
-	public boolean tienePosibleDuplicado(Cliente cliente) {
-//		for (Cliente c : clientes) {
-//			if (
-//				cliente.getNombreCliente().equals(c.getNombreCliente())  
-//				|| cliente.getApellidoContacto().equals(c.getApellidoContacto())
-//				|| cliente.getTelefono() == c.getTelefono()
-//			) {
-//				return true;
-//			}
-//		}
-//		
+	public boolean tienePosibleDuplicado(Cliente cliente) {	
 		return false;
 		
 	}
